@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/styles.css"> 
+    <title>Code Quiz</title>
+</head>
+
+<body>
+    
+    <h1>Coding Quiz Challenge!</h1>
+
+    <!-- First page user is presented with -->
+    <div class="Instructions">
+        <p>Instructions to the game are...</p>
+        <button 
+            id="start-button" 
+            type="button" 
+            class="start-button">
+            Begin Quiz!
+        </button> 
+    </div>
+
+    <main>
+
+        <!-- Next Window -->
+        <div id="wrapper" class="container"> 
+
+            <!-- Timer secion -->
+            <h2 class="timer">Timer: </h2>
+            
+            <!-- Displaying the question page -->
+            <header class="question-page"> 
+                <h3 id="quesiton"></h3>
+            </header>
+
+            <!-- Displaying the question and the multiple choice answers -->
+            <secton> 
+                <div class="displayQuestion">
+                    <div class="answerLine">
+                        <div id="choiceA"></div>
+                    </div>
+
+                    <div class="answerLine">
+                        <div id="choiceB"></div>
+                    </div>
+
+                    <div class="answerLine">
+                        <div id="choiceC"></div>
+                    </div>
+                    
+                    <div class="answerLine">
+                        <div id="choiceD"></div>
+                    </div>
+                </div>
+            </secton>
+
+            <!-- Displaying the window after the game ends -->
+            <section>
+                <div id="gameEnd" class="container" >
+                    <h1>Game Over!</h1>
+                    <h2 id="score">Score: </h2>
+                        <!-- Form for inputing user initials -->
+                        <form>
+                            <label for="initals">Enter initials here: </label><br>
+                            <input id="initials" type="text"><br>
+                            <input id="submitButton" type="submit" class="button">
+                        </form>
+                </div>
+            </section>
+
+            <!-- Displaying the high scores window -->
+            <section>
+                <div id="highScores" class="container">
+                    <header>
+                        <h1>High Scores</h1>
+                    </header>
+
+                    <div id="leaderBoard" class="container">
+                        <h3>Play Again?</h3>
+                    </div>
+
+                </div>
+            </section>
+        </div>
+    </main>
+    <script src="assets/script.js"></script>
+</body>
+</html>
