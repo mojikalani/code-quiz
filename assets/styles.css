@@ -1,86 +1,53 @@
-* { 
-    box-sizing: border-box;
-    font-family: monospace;
+
+* {
+    font-family: 'Noto Sans TC', sans-serif;
 }
 
-/* General Style */
+/* For sticky footer - used flexbox from https://css-tricks.com/couple-takes-sticky-footer/ */
+html, body {
+    height: 100%;
+}
+
 body {
-    background-color: beige;
-    margin: auto;
-    padding: auto;
-    text-align: center;
-}
-
-h1 { 
-    font-size: large;
-    font-weight: bold;
-    margin: 0; 
-}
-
-h2 { 
-    font-weight: bold;
-    margin: 0; 
-}
-
-h3{ 
-    font-weight: bold;
-}
-
-
-/* Personal Style */
-.container { 
-    width: 10px;
+    /* Background image CSS from https://web.dev/optimize-css-background-images-with-media-queries/*/
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    /* css so footer is at bottom of viewport */
     display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    margin: 0 auto;
-
+    flex-direction: column;
 }
 
-.question-page { 
-    padding: 0; 
+/* Main content */
+main {
+    /* css so footer is at bottom of viewport */
+    flex: 1 0 auto;
 }
 
-button { 
-    background-color: blue;
-    border: solid green ;
-    color: white;
-    margin: 5px;
-    padding: 2px 10px;
-    text-decoration: none;
-    display: inline-block;
-    cursor: pointer;
-    font-size: 100%;
-
+/* Footer */
+footer {
+    /* css so footer is at bottom of viewport */
+    flex-shrink: 0;
+    font-size: .5rem;
 }
 
-.button:hover { 
-    color: red;
+/* hide sections until they are shown via the click events */
+#question,
+#gameEnd,
+#highScores,
+#correct_wrong {
+    display: none;  
+  } 
+
+/* Remove bullet points from answers list */
+ul.nobullets {
+list-style-type: none;
 }
 
-.timer {
-    position: absolute;
-    top: 10px; 
-    right: 10px;
-}
-
-.answerLine{ 
-    padding-left: 0;
-    overflow: auto;
-}
-#choiceA, 
-#choiceB, 
-#choiceC, 
-#choiceD { 
-    padding: 5px; 
-    
-}
-#instructions{
-    display: block;
-}
-#question, 
-#gameEnd, 
-#highScores, 
-#correct_wrong { 
-    display:none;
+/* Answer button styling */
+button {
+    box-shadow: none;
+    outline: none;
+    background-color: #28a745;
 }

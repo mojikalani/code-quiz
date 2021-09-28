@@ -11,18 +11,17 @@
 
 <body>
     
-    <h1>Coding Quiz Challenge!</h1>
-
+    
  
     <!-- Timer -->
     <div class="timer"> 
-        <div class="timer-count"></div>
-        <h2>Time: 75</h2>
+        <p>Time: 75</p>
     </div>
 
        <!-- First page user is presented with -->
-    <div id="instructions">
-        
+    <section id="instructions">
+        <h1>Coding Quiz Challenge!</h1>
+
         <p>Instructions to the game are...</p>
         <button 
             id="start-button"
@@ -30,30 +29,22 @@
             class="btn">
             Begin Quiz!
         </button> 
-    </div>
+    </section>
   
     <main>
-        <!-- Next Window -->
-        <div id="wrapper" class="container"> 
-
-            <!-- Displaying the question page -->
-            <header id="question-page" class="hide"> 
-                <h3 id="quesiton"></h3>
-            </header>
-
+   
             <!-- Displaying the question and the multiple choice answers -->
           <section id="question">
                 <div class="row">
-                    <div>
-                        <h2></h2>
+                        <h2 id="displayQuestion"> Question! </h2>
                         <ul>
-                            <li><button id="answer1" value="0" type="button"
+                            <li><button id="choiceA" value="0" type="button"
                                     class="btn">Answer1</button></li>
-                            <li><button id="answer2" value="1" type="button"
+                            <li><button id="choiceB" value="1" type="button"
                                     class="btn">Answer2</button></li>
-                            <li><button id="answer3" value="2" type="button"
+                            <li><button id="choiceC" value="2" type="button"
                                     class="btn">Answer3</button></li>
-                            <li><button id="answer4" value="3" type="button"
+                            <li><button id="choiceD" value="3" type="button"
                                     class="btn">Answer4</button></li>
                         </ul>
                         <!-- Display correct or wrong -->
@@ -61,7 +52,6 @@
                             <hr>
                             
                         </div>
-                    </div>
                 </div>
             </section>
 
@@ -82,9 +72,9 @@
             <!-- Displaying the high scores window -->
             <section>
                 <div id="highScores" class="hide">
-                    <header>
+                   
                         <h1>High Scores</h1>
-                    </header>
+                    
 
                     <div id="leaderBoard" class="container">
                         <h3>Play Again?</h3>
@@ -94,6 +84,7 @@
             </section>
         </div>
     </main>
+  
     <script src="assets/script.js"></script>
 </body>
 </html>
