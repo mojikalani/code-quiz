@@ -1,7 +1,5 @@
 * { 
     box-sizing: border-box;
-    margin: 0;
-    padding: 0;
     font-family: monospace;
 }
 
@@ -28,9 +26,7 @@ h3{
     font-weight: bold;
 }
 
-.hide{ 
-    display: none;
-}
+
 /* Personal Style */
 .container { 
     width: 10px;
@@ -78,4 +74,13 @@ button {
 #choiceD { 
     padding: 5px; 
     
+}
+#instructions{
+    display: block;
+}
+#question, 
+#gameEnd, 
+#highScores, 
+#correct_wrong { 
+    display:none;
 }

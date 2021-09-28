@@ -13,70 +13,74 @@
     
     <h1>Coding Quiz Challenge!</h1>
 
-    <!-- First page user is presented with -->
-    <div class="Instructions">
+ 
+    <!-- Timer -->
+    <div class="timer"> 
+        <div class="timer-count"></div>
+        <h2>Time: 75</h2>
+    </div>
+
+       <!-- First page user is presented with -->
+    <div id="instructions">
+        
         <p>Instructions to the game are...</p>
         <button 
-            id="start-button">
-            
+            id="start-button"
+            type="button"
+            class="btn">
             Begin Quiz!
         </button> 
     </div>
-
+  
     <main>
-
         <!-- Next Window -->
         <div id="wrapper" class="container"> 
 
-            <!-- Timer secion -->
-            <div class="timer"> 
-                <div class="timer-count">10</div>
-                <h2>Timer: </h2>
-                
-
-            </div>
             <!-- Displaying the question page -->
             <header id="question-page" class="hide"> 
                 <h3 id="quesiton"></h3>
             </header>
 
             <!-- Displaying the question and the multiple choice answers -->
-            <secton> 
-                <div id="displayQuestion" class="hide">
-                    <div class="answerLine">
-                        <div id="choiceA"></div>
-                    </div>
-
-                    <div class="answerLine">
-                        <div id="choiceB"></div>
-                    </div>
-
-                    <div class="answerLine">
-                        <div id="choiceC"></div>
-                    </div>
-                    
-                    <div class="answerLine">
-                        <div id="choiceD"></div>
+          <section id="question">
+                <div class="row">
+                    <div>
+                        <h2></h2>
+                        <ul>
+                            <li><button id="answer1" value="0" type="button"
+                                    class="btn">Answer1</button></li>
+                            <li><button id="answer2" value="1" type="button"
+                                    class="btn">Answer2</button></li>
+                            <li><button id="answer3" value="2" type="button"
+                                    class="btn">Answer3</button></li>
+                            <li><button id="answer4" value="3" type="button"
+                                    class="btn">Answer4</button></li>
+                        </ul>
+                        <!-- Display correct or wrong -->
+                        <div id="correct_wrong">
+                            <hr>
+                            
+                        </div>
                     </div>
                 </div>
-            </secton>
+            </section>
 
             <!-- Displaying the window after the game ends -->
-            <!-- <section>
+            <section>
                 <div id="gameEnd" class="hide" >
                     <h1>Game Over!</h1>
                     <h2 id="score">Score: </h2> -->
                         <!-- Form for inputing user initials -->
-                        <!-- <form>
+                         <form>
                             <label for="initals">Enter initials here: </label><br>
                             <input id="initials" type="text"><br>
                             <input id="submitButton" type="submit" class="button">
                         </form>
                 </div>
-            </section> -->
+            </section>
 
             <!-- Displaying the high scores window -->
-            <!-- <section>
+            <section>
                 <div id="highScores" class="hide">
                     <header>
                         <h1>High Scores</h1>
@@ -84,7 +88,7 @@
 
                     <div id="leaderBoard" class="container">
                         <h3>Play Again?</h3>
-                    </div> -->
+                    </div>
 
                 </div>
             </section>

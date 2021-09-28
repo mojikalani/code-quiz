@@ -1,7 +1,7 @@
 // Link id's with HTML elements 
 var startButtonEl = document.querySelector("#start-button"); 
 var timerEl = document.querySelector(".timer-count");
-var questionEl = document.querySelector("#question"); 
+var questionEl = document.querySelector("#questions"); 
 var displayQuestionEl = document.querySelector(".displayQuestion"); 
 var answerLineEl = document.querySelector(".answerLine");
 var choiceAEl = document.querySelector("#choiceA"); 
@@ -20,46 +20,49 @@ var secondsLeft; //Will change based on answers later
 var score= 0; 
 var leaderBoard = [];
 var timer; 
-
+var questioncount = 0;
 //Array for holding all questions
 
 var questionsPool = [
     {
         question: "Question 1", 
-        multipleChoice: [], 
-        answer: ""
+        multipleChoice: ["a", "b", "c", "d"], 
+        answer: "a"
     },
     {
         question: "Question 2", 
-        multipleChoice: [], 
-        answer: ""
+        multipleChoice: ["a", "b", "c", "d"], 
+        answer: "b"
     },
     {
         question: "Question 3", 
-        multipleChoice: [], 
-        answer: ""
+        multipleChoice: ["a", "b", "c", "d"], 
+        answer: "c"
     },
     {
         question: "Question 4", 
-        multipleChoice: [], 
-        answer: ""
+        multipleChoice: ["a", "b", "c", "d"], 
+        answer: "d"
     },
     {
         question: "Question 5", 
-        multipleChoice: [], 
-        answer: ""
+        multipleChoice: ["a", "b", "c", "d"], 
+        answer: "a"
     }
 ];
+
 
 // Starting the quiz
 function startQuiz() { 
     
     secondsLeft = 10; //will change later
     startTimer(); 
-    //instructionsEl.setAttribute("class", "hide"); //reference to hiding instructions 
+    //instructionsEl.setAttribute("class", "hide"); //reference to hiding instructions
+    document.getElementById("instructions").style.display = "none";
+    document.getElementById("question").style.display = "block";
 }
-startButtonEl.addEventListener("click", startQuiz);
 
+startButtonEl.addEventListener("click", startQuiz);
 // ---- Timer Function ----
 
 function startTimer(){ 
