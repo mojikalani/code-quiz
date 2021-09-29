@@ -27,7 +27,9 @@
     <section id="instructions">
         <h1>Coding Quiz Challenge!</h1>
 
-        <p>Instructions to the game are...</p>
+        <p>Let's test your knowledge on JavaScript fundamentals! Try to answer the followding code-related questions within the time limit. 
+            Keep in mind that incorrect answers will penalize your time by ten seconds!
+        </p>
         <button 
             id="start-button"
             type="button"
@@ -64,20 +66,22 @@
             <section>
                 <div id="gameEnd" class="hide" >
                     <h1>Game Over!</h1>
-                    <h2 id="score">Score: </h2> -->
+                    <h2 id="score">Score: </h2> 
                         <!-- Form for inputing user initials -->
                          <form>
                             <label for="initals">Enter initials here: </label><br>
-                            <input id="initials" type="text"><br>
+                            <input id="initials" placeholder= "Initials" type="text"><br>
                             <input id="submitButton" type="submit" class="button">
                         </form>
+                        <button id="playAgain" type="button"
+                                    class="btn">Play Again?</button>
                 </div>
             </section>
 
             <!-- Displaying the high scores window -->
             <section>
-                <div id="highScores" class="hide">
-                   
+                <div id="highScores" class="scores">
+                  
                         <h1>High Scores</h1>
                     
 

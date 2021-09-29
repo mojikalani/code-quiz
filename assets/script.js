@@ -17,8 +17,10 @@ var displayQuestionEl = document.querySelector("#displayQuestion");
 var questionEl = document.querySelector("#question"); 
 var answerChoice = document.querySelector("#correct_wrong");
 var hsPageEl = document.querySelector("#hsPage");
+var endOfGame = document.querySelector("#gameEnd");
+var playAgainEl = document.querySelector("#playAgain");
 // Javascript Elements
-var secondsLeft = 75; //Will change based on answers later
+var secondsLeft = 75; 
 var score= 0; 
 var leaderBoard = [];
 var timer; 
@@ -62,13 +64,13 @@ var questionsPool = [
 
 // Starting the quiz
 function startQuiz() { 
-
+    
     questionCount = 0;
     document.getElementById("instructions").style.display = "none";
     document.getElementById("question").style.display = "block";
     startTimer(); 
     setQuestion(questionCount);
-   
+    
 }
 
 
@@ -78,12 +80,12 @@ function startQuiz() {
 function startTimer(){ 
         
         timer = setInterval(function() { 
-        timerEl.textContent = secondsLeft; 
+        timerEl.textContent = "Time: " + secondsLeft; 
         secondsLeft--;
         
-        if (secondsLeft <=0 || questionCount === questionsPool.length){ 
+        if (secondsLeft <= 0 || questionCount === questionsPool.length){ 
            clearInterval(timer);
-           
+           endGame();
        }else { 
            
        }
@@ -109,14 +111,48 @@ function checkAnswer() {
     
  
     setQuestion(checkAnswer);
-}
-    
-    
-    // ---- Ending the game ----
-    function endGame() { 
     
 }
 
+    submitButtonEl.addEventListener("click", function(event) {
+        event.preventDefault(); 
+
+        newUser(); 
+
+        initialsEl.style.display = "none";
+        document.querySelector("#highScores").style.display = "block"; 
+        document.querySelector("#scores").style.display = "block";
+    })
+
+    function newUser() { 
+        var userInitial = document.querySelector("#initials").value; 
+        if (userInitial === "") { 
+            userInitial = "No Scores";
+        }
+        localStorage.setItem(userInitial, secondsLeft); 
+        document.querySelector(".scores").textContent = ""; 
+        var p = document.createElement("p"); 
+        p.textContent = userInitial + ": " + secondsLeft; 
+        document.querySelector(".scores").appendChild(p);
+    }
+
+    
+
+    // ---- Ending the game ----
+    function endGame() { 
+    questionEl.style.display="none";
+    endOfGame.style.display = "block";
+    scoreEl.textContent = "Score: " + secondsLeft;
+    timerEl.style.display = "none"; 
+}
+
+// ---- Storing User Scores ----
+
+
+playAgainEl.addEventListener("click", function () { 
+    gameEndEl.style.display = "none";
+    startQuiz();
+})
 startButtonEl.addEventListener("click", startQuiz);
 
 questionEl.addEventListener("click", function(event) { 
