@@ -16,6 +16,7 @@ var instructionsEl= document.querySelector(".instructions");
 var displayQuestionEl = document.querySelector("#displayQuestion");
 var questionEl = document.querySelector("#question"); 
 var answerChoice = document.querySelector("#correct_wrong");
+var hsPageEl = document.querySelector("#hsPage");
 // Javascript Elements
 var secondsLeft = 75; //Will change based on answers later
 var score= 0; 
@@ -104,10 +105,9 @@ function setQuestion() {
         // ---- Function to compare answers ----
 
 function checkAnswer() { 
+  
     
-    if (questionCount < questionsPool.length){ 
-        
-    }
+ 
     setQuestion(checkAnswer);
 }
     
@@ -129,3 +129,10 @@ questionEl.addEventListener("click", function(event) {
 
 });
 
+hsPageEl.addEventListener("click", function() { 
+    if (hsPageEl.style.display ==="none") { 
+        hsPageEl.style.display ==="block"
+    }else { 
+        return alert("No High Scores.");
+    }
+})
