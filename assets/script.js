@@ -22,6 +22,7 @@ var score= 0;
 var leaderBoard = [];
 var timer; 
 var questionCount = 0;
+var questionsIdx = 0;
 //Array for holding all questions
 
 var questionsPool = [
@@ -74,7 +75,7 @@ function startQuiz() {
 // ---- Timer Function ----
 
 function startTimer(){ 
-        displayQuestionEl.innerHTML = "";
+        
         timer = setInterval(function() { 
         timerEl.textContent = secondsLeft; 
         secondsLeft--;
@@ -89,25 +90,42 @@ function startTimer(){
    
 }
 
-// ---- Getting a question from the pool ----
+// ---- Getting a question from the pool ---
 function setQuestion() {
-    for (var i = 0; i < questionsPool.length; i++){ 
-        displayQuestionEl.textContent = questionsPool[i].question;
-        choiceAEl.textContent = questionsPool[i].answers[0];
-        choiceBEl.textContent = questionsPool[i].answers[1];
-        choiceCEl.textContent = questionsPool[i].answers[2];
-        choiceDEl.textContent = questionsPool[i].answers[3];
+    
+    displayQuestionEl.textContent = questionsPool[questionCount].question;
+    choiceAEl.textContent = questionsPool[questionCount].answers[0];
+    choiceBEl.textContent = questionsPool[questionCount].answers[1]; 
+    choiceCEl.textContent = questionsPool[questionCount].answers[2]; 
+    choiceDEl.textContent = questionsPool[questionCount].answers[3];
+
+ }
+        
+        // ---- Function to compare answers ----
+
+function checkAnswer() { 
+    
+    if (questionCount < questionsPool.length){ 
         
     }
+    setQuestion(checkAnswer);
 }
-
-// ---- Function to compare answers ----
-
-// ---- Ending the game ----
-function endGame() { 
+    
+    
+    // ---- Ending the game ----
+    function endGame() { 
     
 }
 
 startButtonEl.addEventListener("click", startQuiz);
 
+questionEl.addEventListener("click", function(event) { 
+    if (event.target.matches(".ansBtn")) { 
+        console.log("TODO: Show next question")
+        questionCount = questionCount + 1;
+        checkAnswer();
+        console.log(questionCount);
+    }
+
+});
 
